@@ -5,7 +5,7 @@ import math
 import struct
 
 class Math:
-    state0, state1 = 18334895118323930352, 508147093636674015
+    state0, state1 = 18334895118323930352, 508147093636674015 # Start with random seed
     @classmethod
     def random(cls):
         ret = (cls.state0 >> 12) + 0x3ff0_0000_0000_0000

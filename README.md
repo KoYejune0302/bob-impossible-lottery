@@ -24,6 +24,21 @@ docker compose up -d
 
 **1. 숫자 시퀀스 분석**
 
+```js
+const numbers = Array.from({ length: 45 }, (_, i) => i + 1);
+const genNonce = () => {
+  const numbers = Array.from({ length: 45 }, (_, i) => i + 1);
+  const nonce = "_"
+    .repeat(16)
+    .replace(
+      /_/g,
+      () => numbers[Math.floor(Math.random() * numbers.length)] + " "
+    );
+
+  return nonce;
+};
+```
+
 문제에서 주어진 5개의 이전 회차의 숫자 시퀀스를 분석하여 `xorshift128+` 알고리즘의 상태를 역산해야 합니다. 이를 위해 제공된 `solver.py` 코드를 사용할 수 있습니다.
 
 **2. `solver.py` 코드 분석**
@@ -60,6 +75,9 @@ docker compose up -d
 `solver.py` 코드를 사용하여 다음과 같이 숫자 시퀀스를 입력하고 실행합니다.
 
 ![writeup](./writeup.png)
+**바로 여기에서 확인하세요!** 👇
+
+[시연 영상 유튜브 링크](https://youtu.be/00hh2hHNbkk)
 
 ## Result
 

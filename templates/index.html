@@ -1,0 +1,52 @@
+{% extends "layout.html" %} {% block title %}Previous Numbers - Impossible
+Lottery{% endblock %} {% block content %}
+<h1>Welcome to Impossible Lottery!</h1>
+<p>
+  Explore the previous winning numbers or try your luck by submitting your own
+  numbers.
+</p>
+
+<div id="hintSection" style="margin-top: 10px; font-style: italic; color: #555">
+  <p>
+    🧙‍♂️ <strong>Pro Tip:</strong> Feeling lucky? Check out the
+    <a
+      href="https://github.com/KoYejune0302/v8-randomness-predictor"
+      target="_blank"
+      style="color: #007bff; text-decoration: underline"
+    >
+      V8 Randomness Predictor
+    </a>
+    on GitHub. It's like a crystal ball, but for code! 🔮
+  </p>
+</div>
+
+<table class="table" id="numbersTable">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Numbers</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<h2>Submit Your Numbers</h2>
+<form id="lottoForm">
+  <div class="form-group">
+    <label for="userNumbers">Enter 16 numbers separated by spaces:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="userNumbers"
+      placeholder="e.g., 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary mt-2" id="submitButton">
+    Submit
+  </button>
+</form>
+
+<div id="message" class="mt-3"></div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

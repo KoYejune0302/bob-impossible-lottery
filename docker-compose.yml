@@ -10,3 +10,9 @@ services:
       - .:/app
     environment:
       FLASK_ENV: development
+    networks:
+      - npm
+
+networks:
+  npm:
+    external: true
